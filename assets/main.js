@@ -1,4 +1,4 @@
-/* Small progressive enhancements: figure lightbox + nav highlighting. The page works without JS. */
+/* Progressive enhancements: figure lightbox, scroll reveal, nav highlighting. The page works without JS. */
 (function () {
   "use strict";
 
@@ -62,6 +62,19 @@
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && !box.hidden) closeBox();
   });
+
+  // ---- Scroll reveal ----------------------------------------------------------
+  var reveals = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var rio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("in"); rio.unobserve(en.target); }
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -6% 0px" });
+    reveals.forEach(function (el) { rio.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  }
 
   // ---- Highlight the current section in the nav ------------------------------
   var links = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
