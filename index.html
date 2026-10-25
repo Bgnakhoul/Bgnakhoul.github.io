@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bachir G. Nakhoul | Electronics, IC Design &amp; Embedded Systems</title>
+<meta name="description" content="Portfolio of Bachir G. Nakhoul, Computer and Communications Engineering student at Notre Dame University – Louaize: analog and digital IC design in 45 nm CMOS, layout and parasitic-aware verification, PIC firmware, and VHDL processor design.">
+<meta name="author" content="Bachir G. Nakhoul">
+<meta property="og:title" content="Bachir G. Nakhoul | Electronics, IC Design &amp; Embedded Systems">
+<meta property="og:description" content="Selected electronics projects: 45 nm analog and digital IC design, layout and post-layout verification, PIC16F877A firmware, and a VHDL RISC processor.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0a5a69">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a5a69'/%3E%3Cpath d='M6 16h5l3-7 4 14 3-7h5' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Bachir G. Nakhoul",
+  "url": "https://bgnakhoul.github.io",
+  "sameAs": ["https://github.com/bgnakhoul"],
+  "affiliation": { "@type": "CollegeOrUniversity", "name": "Notre Dame University – Louaize" },
+  "knowsAbout": ["Analog IC design", "Digital IC design", "Embedded systems", "VHDL", "Communication systems"]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">Bachir G. Nakhoul</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#more">More work</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<div class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Electronics &amp; IC design portfolio</p>
+      <h1>Bachir G. Nakhoul</h1>
+      <p class="affil">Undergraduate, Computer and Communications Engineering<br>
+        Faculty of Engineering, ECCE Department · Notre Dame University – Louaize (NDU), Lebanon</p>
+      <p class="lede">My project work centers on electronics: transistor-level analog and digital IC design in a 45&nbsp;nm process, layout and parasitic-aware verification, microcontroller firmware, and HDL processor design. This page documents selected projects with the specifications, methods and measured results behind each.</p>
+      <div class="btn-row">
+        <a class="btn primary" href="#projects">See the projects</a>
+        <a class="btn ghost" href="https://github.com/bgnakhoul">GitHub</a>
+      </div>
+    </div>
+    <aside class="panel" aria-label="Areas covered">
+      <h2>Areas covered in these projects</h2>
+      <ul>
+        <li>Analog &amp; digital IC design, 45&nbsp;nm CMOS</li>
+        <li>Layout, DRC/LVS, EMIR and parasitic extraction</li>
+        <li>PVT corners, Monte Carlo and aging analysis</li>
+        <li>Embedded firmware: PIC assembly, UART, motor and sensor interfacing</li>
+        <li>HDL: a load/store RISC processor in VHDL</li>
+        <li>Communication systems: line coding, PSD, BER, synchronization</li>
+      </ul>
+    </aside>
+  </div>
+</div>
+
+<!-- ===================== AT A GLANCE ===================== -->
+<section aria-labelledby="glance-h" style="padding-top:16px">
+  <div class="wrap">
+    <h2 id="glance-h" class="title" style="font-size:1.3rem;margin-bottom:16px">At a glance</h2>
+    <div class="glance">
+      <div class="card">
+        <h3>Analog IC design</h3>
+        <p>Spec-driven 45&nbsp;nm amplifier carried from device characterization through layout, EMIR and post-layout sign-off.</p>
+        <a class="more" href="#analog">Read the project →</a>
+      </div>
+      <div class="card">
+        <h3>Embedded hardware</h3>
+        <p>Bluetooth-controlled line-following robot on a PIC16F877A, with firmware written in assembly.</p>
+        <a class="more" href="#car">Read the project →</a>
+      </div>
+      <div class="card">
+        <h3>Digital IC design</h3>
+        <p>A 4-bit array multiplier built from sized, transistor-level full adders and AND gates.</p>
+        <a class="more" href="#digital">Read the project →</a>
+      </div>
+      <div class="card">
+        <h3>Processor design</h3>
+        <p>A 26-instruction load/store RISC processor in VHDL, with block-level and top-level testbenches.</p>
+        <a class="more" href="#risc">Read the project →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEATURED PROJECTS ===================== -->
+<section id="projects" aria-labelledby="projects-h">
+  <div class="wrap">
+    <div class="section-head"><span class="num">01</span><h2 id="projects-h" class="title">Featured electronics projects</h2></div>
+    <p class="section-intro">Ordered by depth of electronics content. Click any figure to enlarge it.</p>
+
+    <!-- ---------- ANALOG ---------- -->
+    <article class="project" id="analog">
+      <span class="proj-tag">Analog IC design</span>
+      <h3>Design, Layout and Post-Layout Verification of a 45&nbsp;nm Common-Source Amplifier</h3>
+      <p class="meta"><span>Analog IC Design (EEN&nbsp;311)</span><span>Nov–Dec 2024</span><span>Individual</span><span>Two IEEE-format reports</span></p>
+
+      <div class="body-grid">
+        <div class="prose">
+          <p>The task was to design an NMOS/PMOS common-source amplifier in a 45&nbsp;nm PDK that meets a fixed specification, then take it through the flow a real analog block goes through: device characterization, corner and statistical verification, layout, physical verification, parasitic extraction and post-layout sign-off.</p>
+
+          <h4>Design and pre-layout verification</h4>
+          <ul>
+            <li>Characterized the NMOS and PMOS separately with DC sweeps to extract V<sub>TH</sub>, V<sub>A</sub>, λ, k′ and g<sub>m</sub>, then sized the devices. The NMOS is W/L = 21.6&nbsp;µm / 45&nbsp;nm (10 fingers) biased at V<sub>GS</sub> = 650&nbsp;mV for I<sub>D</sub> ≈ 1.04&nbsp;mA (V<sub>ov</sub> ≈ 59&nbsp;mV, g<sub>m</sub> ≈ 35&nbsp;mS). The PMOS is widened to 41.6&nbsp;µm to compensate for lower hole mobility.</li>
+            <li>Ran transient, DC and AC analyses (mid-band gain 16.6&nbsp;dB, −3&nbsp;dB frequency ≈ 6&nbsp;GHz), then swept process corners (tt, ff, ss, fs, sf, Monte Carlo) × supply (0.95–1.10&nbsp;V) × temperature (10–75&nbsp;°C) in ADE Assembler. Almost every point passes; a few skewed-corner points land within 10&nbsp;% of a limit.</li>
+            <li>Monte Carlo (200 samples): 100&nbsp;% yield on gain, bandwidth, current and power.</li>
+            <li>Reliability: an aging simulation over a 3-year lifetime (HCI, NBTI, PBTI, plus self-heating) still meets every specification. The PMOS self-heating rise was about 4.5&nbsp;°C.</li>
+          </ul>
+
+          <h4>Layout and physical verification</h4>
+          <ul>
+            <li>Built the layout with multi-finger devices and added six dummy transistors and two dummy resistors around the active devices for matching. Drain connections use Metal&nbsp;1–3 via stacks and an M3 route to the output pin.</li>
+            <li>Cleared DRC and LVS (the layout matches the schematic).</li>
+            <li><b>Electromigration and IR drop (EMIR).</b> Cadence EAD flagged violations on the signal nets, where J/J<sub>max</sub> ≥ 1 is a violation: 1.50 on <code>net2</code> and 11.18 on the output. I widened the metal (net2 from 0.3 to 0.9&nbsp;µm, output paths from 0.08 to 1.02&nbsp;µm) and added via rows. J/J<sub>max</sub> dropped to 0.61 and 0.85, and the worst IR drop fell from 387&nbsp;µV to 178&nbsp;µV on net2 and from 8.7&nbsp;mV to 1.0&nbsp;mV on the output. Flags on the supply rails were left outstanding in this iteration.</li>
+          </ul>
+
+          <h4>Post-layout results (parasitic extraction)</h4>
+          <p>Re-running the same sweeps with extracted parasitics shows what layout costs. Gain, current and power are essentially unchanged, but bandwidth falls by about 35&nbsp;%.</p>
+        </div>
+
+        <div>
+          <div class="facts">
+            <h4>Specification</h4>
+            <dl>
+              <dt>Supply</dt><dd>1.1 V</dd>
+              <dt>Load</dt><dd>100 kΩ</dd>
+              <dt>Voltage gain</dt><dd>≥ 7.5 dB</dd>
+              <dt>Bandwidth</dt><dd>≥ 4 GHz</dd>
+              <dt>Power</dt><dd>≤ 2.75 mW</dd>
+              <dt>Current</dt><dd>≤ 2.5 mA</dd>
+              <dt>Temperature</dt><dd>10–75 °C</dd>
+            </dl>
+          </div>
+          <div class="facts">
+            <h4>Tools</h4>
+            <div class="tools"><span>Cadence Virtuoso</span><span>Spectre</span><span>ADE Assembler</span><span>PVS (DRC/LVS)</span><span>EAD (EMIR)</span><span>Quantus (PEX)</span><span>45 nm PDK</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data">
+          <caption>Nominal conditions. Monte Carlo yield from 200 samples. Both columns use the same testbench; only the extracted parasitics differ.</caption>
+          <thead><tr><th>Metric</th><th>Spec</th><th class="num">Pre-layout</th><th class="num">Post-layout</th></tr></thead>
+          <tbody>
+            <tr><td>Voltage gain</td><td>≥ 7.5 dB</td><td class="num ok">16.64 dB</td><td class="num ok">16.62 dB</td></tr>
+            <tr><td>Bandwidth (−3 dB)</td><td>≥ 4 GHz</td><td class="num ok">6.02 GHz</td><td class="num near">3.93 GHz</td></tr>
+            <tr><td>Supply current</td><td>≤ 2.5 mA</td><td class="num ok">1.82 mA</td><td class="num ok">1.74 mA</td></tr>
+            <tr><td>Power</td><td>≤ 2.75 mW</td><td class="num ok">2.00 mW</td><td class="num ok">1.91 mW</td></tr>
+            <tr><td>Monte Carlo yield</td><td>all specs</td><td class="num ok">100 %</td><td class="num near">100 % (gain, current, power); 57.5 % (bandwidth)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note"><strong>Takeaway.</strong> The nominal post-layout bandwidth misses the 4&nbsp;GHz target by under 2&nbsp;%, but 42.5&nbsp;% of Monte Carlo samples fall below it, and at the slow process corner all 16 supply/temperature points come in at 2.5–2.8&nbsp;GHz while gain, current and power still pass. The EM fix contributes: widening the output metal roughly doubled that net's extracted capacitance (2.14 → 4.31&nbsp;fF). The report's conclusion is that optimizing placement and routing is the lever; the next iteration would trade metal width against capacitance using the actual J/J<sub>max</sub> margin.</div>
+
+      <div class="figs c3">
+        <figure class="zoom"><img src="assets/img/ana-schematic.webp" width="669" height="391" loading="lazy" alt="Common-source amplifier schematic with dummy devices, drawn in Cadence Virtuoso"><figcaption><b>Schematic</b> with dummy transistors and resistors added for layout matching.</figcaption></figure>
+        <figure class="zoom"><img src="assets/img/ana-layout.webp" width="403" height="551" loading="lazy" alt="Layout of the common-source amplifier showing multi-finger NMOS and PMOS devices, dummy devices and routed output"><figcaption><b>Layout</b> after routing the output through M1–M3 via stacks.</figcaption></figure>
+        <figure class="zoom"><img src="assets/img/ana-lvs.webp" width="669" height="526" loading="lazy" alt="PVS LVS run status showing the layout matches the schematic"><figcaption><b>LVS</b> run: extraction clean and the comparison result is a match.</figcaption></figure>
+      </div>
+      <div class="figs c2">
+        <figure class="zoom"><img src="assets/img/ana-ac-pre.webp" width="912" height="572" loading="lazy" alt="Pre-layout AC response with markers at 16.64 dB mid-band gain and about 5.95 GHz"><figcaption><b>AC response, pre-layout.</b> Mid-band gain 16.64&nbsp;dB; −3&nbsp;dB point at about 6&nbsp;GHz.</figcaption></figure>
+        <figure class="zoom"><img src="assets/img/ana-ac-post.webp" width="698" height="363" loading="lazy" alt="Post-layout AC response with the bandwidth marker near 3.9 GHz"><figcaption><b>AC response, post-layout.</b> Same gain; the −3&nbsp;dB point moves to about 3.9&nbsp;GHz.</figcaption></figure>
+        <figure class="zoom fig-wide"><img src="assets/img/ana-mc-post.webp" width="1090" height="567" loading="lazy" alt="Post-layout Monte Carlo histograms for gain, bandwidth, current and power"><figcaption><b>Post-layout Monte Carlo</b> (200 samples): histograms of gain, bandwidth, current and power. Only bandwidth has samples below its limit.</figcaption></figure>
+      </div>
+    </article>
+
+    <!-- ---------- CAR ---------- -->
+    <article class="project" id="car">
+      <span class="proj-tag">Embedded hardware &amp; firmware</span>
+      <h3>Bluetooth-Controlled Autonomous Delivery Car on a PIC16F877A</h3>
+      <p class="meta"><span>Microprocessor Laboratory (EEN&nbsp;425)</span><span>Dec 2025</span><span>Individual</span><span>Hardware, firmware and PC app</span></p>
+
+      <div class="body-grid">
+        <div class="prose">
+          <p>A small delivery robot for structured indoor spaces such as hospitals, labs and offices, where reducing human contact matters. A PC application sends a room number (1–9) over Bluetooth. The car follows a black line, counts room markers, stops at the destination, shows its status on an LCD and reports its position back to the PC.</p>
+
+          <h4>Firmware (PIC assembly)</h4>
+          <ul>
+            <li><b>Serial link.</b> The hardware UART runs at 9600&nbsp;baud (SPBRG&nbsp;=&nbsp;25, BRGH&nbsp;=&nbsp;1) with continuous receive. Overrun errors are cleared by toggling CREN so the receiver cannot lock up.</li>
+            <li><b>Line following.</b> Three IR sensors on RB0–RB2 are read as a 3-bit pattern and used as an index into a jump table through PCL: <code>010</code> straight, <code>011</code>/<code>001</code> steer right, <code>110</code>/<code>100</code> steer left, <code>101</code> room marker.</li>
+            <li><b>Room counting.</b> Each marker decrements a remaining-rooms counter and increments the current-room state. A roughly 400&nbsp;ms software delay debounces the marker so one marker is not counted twice. At zero the motors stop and the LCD shows “ARRIVED!”.</li>
+            <li><b>Actuation.</b> Motion commands are single-byte writes to PORTC, which drives the L293N H-bridge inputs.</li>
+          </ul>
+
+          <h4>Hardware</h4>
+          <ul>
+            <li>The HC-05 module is a 3.3&nbsp;V device, so the PIC's 5&nbsp;V TX line reaches its RX pin through a resistor divider. The module's STATE pin drives an LED for connection debugging.</li>
+            <li>A 16×2 character LCD runs in 8-bit mode (data on PORTD, RS and E on PORTE, RW tied low) and shows “GOING TO ROOM n” or “ARRIVED!”.</li>
+            <li>Python (tkinter and pyserial) provides the room selector and shows the position the car reports back.</li>
+          </ul>
+
+          <h4>What went wrong, and limits</h4>
+          <p>Designing a path the car could follow without drifting was the first difficulty, and early firmware double-counted or skipped room markers; iterating on the firmware, including the debounce above, resolved it. A faulty HC-05 module also caused hours of debugging through inconsistent data reception. The design depends on a clean, continuous line, has no obstacle detection, and relies on a fixed marker pattern. Wheel encoders, obstacle sensing and a more robust wireless link are the natural next steps.</p>
+        </div>
+
+        <div>
+          <div class="facts">
+            <h4>System</h4>
+            <dl>
+              <dt>Controller</dt><dd>PIC16F877A</dd>
+              <dt>Wireless</dt><dd>HC-05, 9600 baud</dd>
+              <dt>Motor driver</dt><dd>L293N H-bridge</dd>
+              <dt>Line sensing</dt><dd>3 × IR reflective</dd>
+              <dt>Display</dt><dd>16×2 LCD</dd>
+              <dt>Host</dt><dd>Python / Tk GUI</dd>
+              <dt>Destinations</dt><dd>rooms 1–9</dd>
+            </dl>
+          </div>
+          <div class="facts">
+            <h4>Tools</h4>
+            <div class="tools"><span>PIC assembly</span><span>UART</span><span>H-bridge drive</span><span>IR sensing</span><span>Python</span><span>pyserial</span><span>Breadboard prototyping</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="figs c3">
+        <figure class="zoom"><img src="assets/img/car-top.webp" width="483" height="721" loading="lazy" alt="Top view of the robot car: PIC16F877A on a breadboard, LCD, motor driver and wiring on an acrylic chassis"><figcaption><b>Top view.</b> PIC16F877A, LCD, L293N motor driver and wiring on the chassis.</figcaption></figure>
+        <figure class="zoom"><img src="assets/img/car-front.webp" width="553" height="726" loading="lazy" alt="Front view of the car showing three IR line-sensor modules"><figcaption><b>Front view.</b> Three IR reflective sensor modules face the floor.</figcaption></figure>
+        <figure class="zoom"><img src="assets/img/car-blockdiagram.webp" width="933" height="1069" loading="lazy" alt="Block diagram: PC Python script, Bluetooth HC-05, PIC microcontroller, IR sensor array, motor driver, LCD and DC motors"><figcaption><b>System block diagram.</b> Command path from the PC to the motors, and status path back.</figcaption></figure>
+      </div>
+      <div class="figs">
+        <figure class="zoom"><img src="assets/img/car-pinmap.webp" width="1400" height="511" loading="lazy" alt="Pin-level wiring diagram of the PIC16F877A ports to the motor driver, LCD, IR sensors and Bluetooth module"><figcaption><b>Pin assignment.</b> Motor-control, LCD, sensor and USART ports on the PIC16F877A.</figcaption></figure>
+      </div>
+    </article>
+
+    <!-- ---------- DIGITAL IC ---------- -->
+    <article class="project" id="digital">
+      <span class="proj-tag">Digital IC design</span>
+      <h3>Transistor-Level 4-Bit Array Multiplier in 45&nbsp;nm CMOS</h3>
+      <p class="meta"><span>Digital Integrated Circuits (EEN&nbsp;422)</span><span>May 2026</span><span>Team project with Anthony El Beyrouthy</span><span>Cadence Virtuoso</span></p>
+
+      <div class="body-grid">
+        <div class="prose">
+          <p>A 4×4 array multiplier built at the transistor level, without a standard-cell library, so every gate is a sized schematic. The work covers cell design, characterization, assembly and functional test.</p>
+
+          <h4>Cell design</h4>
+          <ul>
+            <li><b>Full adder.</b> A 28-transistor static CMOS design. Devices are sized for symmetric rise and fall, with W<sub>p</sub> = 3·W<sub>n</sub> (360&nbsp;nm and 120&nbsp;nm, L = 45&nbsp;nm) to offset the electron/hole mobility ratio of about 3.</li>
+            <li><b>AND gate.</b> A NAND followed by an inverter, six transistors, using the same sizing rule.</li>
+            <li>Devices are instantiated as multi-finger transistors to reflect realistic layout geometry.</li>
+          </ul>
+
+          <h4>Characterization and test</h4>
+          <ul>
+            <li>Transient simulations of the full adder (Sum and C<sub>out</sub>) and the AND gate, measuring rise and fall times, before assembling the array.</li>
+            <li>Functional tests on the full multiplier matched the expected products: 15×15&nbsp;=&nbsp;225, 14×7&nbsp;=&nbsp;98 and 11×13&nbsp;=&nbsp;143.</li>
+          </ul>
+
+          <h4>Observation: output glitches</h4>
+          <p>The output waveforms show transient glitches on the upper product bits before they settle, the expected signature of a ripple-carry structure whose carries arrive late. We proposed three remedies: register P0–P7 in D flip-flops and sample after the logic has settled, replace the ripple adders with carry-lookahead, or simply wait for the outputs to settle.</p>
+        </div>
+
+        <div>
+          <div class="facts">
+            <h4>Cells</h4>
+            <dl>
+              <dt>Full adder</dt><dd>28 transistors</dd>
+              <dt>AND gate</dt><dd>6 transistors</dd>
+              <dt>W<sub>n</sub> / W<sub>p</sub></dt><dd>120 / 360 nm</dd>
+              <dt>Channel length</dt><dd>45 nm</dd>
+              <dt>FA area</dt><dd>≈ 0.82 µm²</dd>
+              <dt>AND area</dt><dd>≈ 0.076 µm²</dd>
+            </dl>
+          </div>
+          <div class="facts">
+            <h4>Tools</h4>
+            <div class="tools"><span>Cadence Virtuoso</span><span>Spectre transient</span><span>45 nm PDK</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="figs c2">
+        <figure class="zoom"><img src="assets/img/dic-fulladder.webp" width="467" height="291" loading="lazy" alt="Transistor-level schematic of the 28-transistor CMOS full adder"><figcaption><b>Full adder.</b> The 28-transistor static CMOS cell that forms the adder array.</figcaption></figure>
+        <figure class="zoom"><img src="assets/img/dic-array.webp" width="728" height="590" loading="lazy" alt="Block diagram of the 4-bit array multiplier built from AND gates and full adders"><figcaption><b>Array structure.</b> Partial-product AND gates feeding rows of full adders.</figcaption></figure>
+        <figure class="zoom"><img src="assets/img/dic-schematic.webp" width="784" height="631" loading="lazy" alt="Cadence schematic of the complete 4-bit multiplier"><figcaption><b>Multiplier in Virtuoso.</b> Hierarchical schematic of the complete design.</figcaption></figure>
+        <figure class="zoom"><img src="assets/img/dic-waveforms.webp" width="1400" height="519" loading="lazy" alt="Transient waveforms of inputs A and B and outputs P0 to P7 over 100 nanoseconds, showing glitches on upper bits"><figcaption><b>Transient test.</b> Inputs A and B (left) and product bits P0–P7 (right); glitches on the upper bits are visible before they settle.</figcaption></figure>
+      </div>
+    </article>
+
+    <!-- ---------- RISC ---------- -->
+    <article class="project" id="risc">
+      <span class="proj-tag">HDL &amp; computer architecture</span>
+      <h3>A 26-Instruction Load/Store RISC Processor in VHDL</h3>
+      <p class="meta"><span>Microprocessors (EEN&nbsp;424)</span><span>Dec 2025</span><span>Individual</span><span>VHDL</span></p>
+
+      <div class="body-grid">
+        <div class="prose">
+          <p>The course project asked for a RISC processor with its own instruction set, register file, memories and control unit, able to handle branches without hazards. My design uses 16-bit instructions over an 8-bit datapath, with a single-cycle control unit, so a branch is resolved in the same cycle it is fetched and there is no pipeline to hazard.</p>
+
+          <h4>Design</h4>
+          <ul>
+            <li><b>Instruction word.</b> Four 4-bit fields: opcode, a select/Rx field, destination and source. Immediate, direct-memory and branch forms reuse the low byte as an 8-bit immediate or address; <code>JMP</code> takes a 12-bit absolute address.</li>
+            <li><b>Datapath.</b> A 12-bit program counter, a 16 × 8-bit register file with two read ports and one write port, a 15-operation ALU and a separate data memory.</li>
+            <li><b>Control.</b> One combinational process decodes the opcode and select field into register-write, memory-write, ALU-select, write-back and PC-load signals. Branch targets are <code>PC + sign-extended imm8</code>.</li>
+            <li><b>Instruction set (26).</b> Arithmetic, logic, shifts, unsigned compare-and-set (<code>SLT</code>/<code>RLT</code>), register moves, direct and indirect load/store, and conditional and unconditional branches (see table).</li>
+          </ul>
+
+          <h4>Verification</h4>
+          <p>Each block has its own testbench (ALU, register file, data memory, program counter, program memory). The top-level testbench runs a program that sums 1…5 into R2 and asserts that R2 ends at <code>0x0F</code>, so the check is self-contained rather than read off a waveform.</p>
+        </div>
+
+        <div>
+          <div class="facts">
+            <h4>Architecture</h4>
+            <dl>
+              <dt>Instruction</dt><dd>16 bit</dd>
+              <dt>Data width</dt><dd>8 bit</dd>
+              <dt>Registers</dt><dd>16 × 8 bit</dd>
+              <dt>Program counter</dt><dd>12 bit</dd>
+              <dt>ALU operations</dt><dd>15</dd>
+              <dt>Instructions</dt><dd>26</dd>
+              <dt>Testbenches</dt><dd>6</dd>
+            </dl>
+          </div>
+          <div class="facts">
+            <h4>Tools</h4>
+            <div class="tools"><span>VHDL (RTL)</span><span>Self-checking testbenches</span><span>ISA design</span></div>
+          </div>
+        </div>
+      </div>
+
+      <figure class="diagram">
+        <svg viewBox="0 0 700 380" role="img" aria-labelledby="risc-svg-t risc-svg-d">
+          <title id="risc-svg-t">RISC processor block diagram</title>
+          <desc id="risc-svg-d">The program counter addresses the program memory. The instruction feeds the control unit and the register file. The register file feeds the ALU and the data memory. ALU results and data-memory reads are written back to the register file. The control unit also loads the program counter on branches and jumps.</desc>
+          <defs>
+            <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0 L10 5 L0 10 z"/></marker>
+            <marker id="ahc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead ctl" d="M0 0 L10 5 L0 10 z"/></marker>
+          </defs>
+
+          <rect class="blk" x="20" y="150" width="90" height="60" rx="8"/>
+          <text class="lbl" x="65" y="176" text-anchor="middle">PC</text>
+          <text class="sub" x="65" y="195" text-anchor="middle">12-bit</text>
+
+          <rect class="blk" x="140" y="150" width="110" height="60" rx="8"/>
+          <text class="lbl" x="195" y="176" text-anchor="middle">Program memory</text>
+          <text class="sub" x="195" y="195" text-anchor="middle">16-bit instructions</text>
+
+          <rect class="blk ctl" x="290" y="24" width="200" height="70" rx="8"/>
+          <text class="lbl" x="390" y="54" text-anchor="middle">Control unit</text>
+          <text class="sub" x="390" y="74" text-anchor="middle">decode · branch · WB select</text>
+
+          <rect class="blk" x="300" y="150" width="180" height="70" rx="8"/>
+          <text class="lbl" x="390" y="180" text-anchor="middle">Register file</text>
+          <text class="sub" x="390" y="200" text-anchor="middle">16 × 8-bit · 2 read, 1 write</text>
+
+          <rect class="blk" x="540" y="150" width="110" height="70" rx="8"/>
+          <text class="lbl" x="595" y="180" text-anchor="middle">ALU</text>
+          <text class="sub" x="595" y="200" text-anchor="middle">15 operations</text>
+
+          <rect class="blk" x="300" y="300" width="180" height="60" rx="8"/>
+          <text class="lbl" x="390" y="327" text-anchor="middle">Data memory</text>
+          <text class="sub" x="390" y="346" text-anchor="middle">8-bit address, 8-bit data</text>
+
+          <path class="wire" d="M110 180 H140" marker-end="url(#ah)"/>
+          <path class="wire" d="M250 180 H272 V59 H290" marker-end="url(#ah)"/>
+          <path class="wire" d="M272 180 H300" marker-end="url(#ah)"/>
+          <text class="wlbl" x="254" y="198">instr</text>
+
+          <path class="wire ctl" d="M390 94 V150" marker-end="url(#ahc)"/>
+          <text class="wlbl" x="398" y="126">we · waddr</text>
+
+          <path class="wire ctl" d="M490 59 H595 V150" marker-end="url(#ahc)"/>
+          <text class="wlbl" x="500" y="52">alu_sel</text>
+
+          <path class="wire" d="M480 185 H540" marker-end="url(#ah)"/>
+          <text class="wlbl" x="486" y="176">Rx, Ry</text>
+
+          <path class="wire" d="M595 220 V256 H430 V220" marker-end="url(#ah)"/>
+          <path class="wire" d="M430 300 V256"/>
+          <text class="wlbl" x="440" y="247">write-back</text>
+
+          <path class="wire" d="M350 220 V300" marker-end="url(#ah)"/>
+          <text class="wlbl" x="342" y="266" text-anchor="end">addr / data</text>
+
+          <path class="wire ctl" d="M290 36 H65 V150" marker-end="url(#ahc)"/>
+          <text class="wlbl" x="74" y="29">branch / jump</text>
+          <text class="wlbl" x="74" y="54">PC + sext(imm8)</text>
+        </svg>
+        <figcaption>Block diagram drawn from the VHDL structure. Solid lines carry data; dashed lines carry control. The whole path from fetch to write-back completes in one clock cycle.</figcaption>
+      </figure>
+
+      <div class="body-grid" style="margin-top:22px">
+        <div>
+          <div class="table-wrap">
+            <table class="data" style="min-width:0">
+              <caption>Instruction word formats (bit ranges)</caption>
+              <thead><tr><th>Format</th><th class="num">15–12</th><th class="num">11–8</th><th class="num">7–4</th><th class="num">3–0</th></tr></thead>
+              <tbody>
+                <tr><td>Register (R-type)</td><td class="num">opcode</td><td class="num">sel</td><td class="num">dest / Rx</td><td class="num">src / Ry</td></tr>
+                <tr><td>Immediate, direct memory, branch</td><td class="num">opcode</td><td class="num">Rx</td><td class="num" colspan="2">imm8 / address / offset</td></tr>
+                <tr><td>Jump</td><td class="num">opcode</td><td class="num" colspan="3">12-bit absolute address</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <div class="table-wrap">
+            <table class="data" style="min-width:0">
+              <caption>Instruction groups (<code>LD#</code> and <code>STR#</code> use a direct address)</caption>
+              <thead><tr><th>Group</th><th>Instructions</th></tr></thead>
+              <tbody>
+                <tr><td>Arithmetic</td><td><code>ADD SUB INC DEC ADI</code></td></tr>
+                <tr><td>Logic</td><td><code>NOT AND OR XOR NAND NOR CLR SET</code></td></tr>
+                <tr><td>Shift / compare</td><td><code>SHL SHR SLT RLT</code></td></tr>
+                <tr><td>Data movement</td><td><code>MOV LD ST LD# STR#</code></td></tr>
+                <tr><td>Control flow</td><td><code>JZ JNZ JMP NOP</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-wrap" style="max-width:720px">
+        <table class="data" style="min-width:0">
+          <caption>Test program in the program ROM: sums 1…5 into R2. Expected result: R2 = 15 = 0x0F.</caption>
+          <thead><tr><th class="num">Addr</th><th class="num">Hex</th><th>Instruction</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td class="num">0</td><td class="num">2105</td><td><code>ADI R1, #5</code></td><td>counter = 5</td></tr>
+            <tr><td class="num">1</td><td class="num">2200</td><td><code>ADI R2, #0</code></td><td>accumulator = 0</td></tr>
+            <tr><td class="num">2</td><td class="num">1921</td><td><code>ADD R2, R1</code></td><td>R2 ← R2 + R1</td></tr>
+            <tr><td class="num">3</td><td class="num">21FF</td><td><code>ADI R1, #−1</code></td><td>R1 ← R1 − 1</td></tr>
+            <tr><td class="num">4</td><td class="num">A1FE</td><td><code>JNZ R1, #−2</code></td><td>loop to address 2 while R1 ≠ 0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== MORE WORK ===================== -->
+<section id="more" aria-labelledby="more-h" style="background:var(--surface-2)">
+  <div class="wrap">
+    <div class="section-head"><span class="num">02</span><h2 id="more-h" class="title">Communications and signal processing</h2></div>
+    <p class="section-intro">Two team projects that apply the same measurement-driven approach to systems and signals.</p>
+
+    <div class="compact-grid">
+      <article class="compact" id="comm">
+        <span class="proj-tag" style="align-self:flex-start">Communication systems</span>
+        <h3>Bipolar Pseudoternary Line Code: Spectrum, Detection and Synchronization</h3>
+        <p class="meta"><span>Communication Systems I (EEN&nbsp;344)</span><span>May 2026</span><span>With Habib Bou Maroun</span></p>
+        <p>A baseband link in MATLAB/Simulink: a custom encoder, spectrum analysis, a mid-bit-sampling receiver and a synchronization experiment, with theory compared against simulation.</p>
+        <ul>
+          <li>Simulated PSD matches theory: no DC component, first null at 1/T<sub>b</sub> = 1&nbsp;kHz, main lobe 2&nbsp;kHz, efficiency 1&nbsp;bit/s/Hz.</li>
+          <li>Noiseless receiver over 1000 bits: BER = 0.</li>
+          <li>Synchronization test: a 0.25&nbsp;T<sub>b</sub> sampling offset still gave 0 errors, while a 0.5&nbsp;T<sub>b</sub> offset gave BER = 0.5 (500 errors in 1000 bits). The code has a transition density of 0.75 for equiprobable bits but no transitions in runs of ones, which is why clock recovery matters.</li>
+        </ul>
+        <div class="figs c2">
+          <figure class="zoom"><img src="assets/img/comm-psd.webp" width="1299" height="664" loading="lazy" alt="Simulated power spectral density of the bipolar pseudoternary signal with nulls at 0 and plus or minus 1 kilohertz"><figcaption><b>Simulated PSD.</b> Null at DC and at ±1&nbsp;kHz.</figcaption></figure>
+          <figure class="zoom"><img src="assets/img/comm-time.webp" width="1299" height="632" loading="lazy" alt="Simulink scope showing ten input bits, the encoded waveform and the held signal"><figcaption><b>Time domain.</b> Ten input bits, the encoded signal and the held output.</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="compact" id="signals">
+        <span class="proj-tag" style="align-self:flex-start">Signals &amp; systems</span>
+        <h3>Transform-Based Audio Manipulation</h3>
+        <p class="meta"><span>Signals and Systems</span><span>Dec 2024</span><span>With Sami N. Khalil and Youssef K. Chalhoub</span></p>
+        <p>A MATLAB application that manipulates music with Fourier and Z-transform methods, built around an interactive interface.</p>
+        <ul>
+          <li><b>Component separation.</b> FFT-based filtering splits a mixed track into drums (low-pass), vocals (band-pass) and cymbals (high-pass), with cut-offs found by iterative listening and spectrum inspection.</li>
+          <li><b>Equalization.</b> Bass (0–300&nbsp;Hz), mid (300–4000&nbsp;Hz) and treble bands are amplified or attenuated in the frequency domain, then returned to time with an inverse FFT.</li>
+          <li><b>Effects.</b> Speed change by resampling, reverse playback by reversing samples, and echo through a Z-transform difference equation, plus masking, panning and amplification transformations.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SKILLS ===================== -->
+<section id="skills" aria-labelledby="skills-h">
+  <div class="wrap">
+    <div class="section-head"><span class="num">03</span><h2 id="skills-h" class="title">Skills and tools</h2></div>
+    <p class="section-intro">Everything listed here is exercised in the projects above.</p>
+    <div class="skills">
+      <div class="skill"><h3>IC design &amp; EDA</h3><p>Cadence Virtuoso schematic and layout, Spectre simulation, ADE Assembler, PVS for DRC and LVS, EAD for EMIR, Quantus parasitic extraction; 45&nbsp;nm CMOS.</p></div>
+      <div class="skill"><h3>Circuit analysis &amp; verification</h3><p>DC, AC and transient analysis; PVT corner sweeps; Monte Carlo yield; aging and self-heating; pre- versus post-layout comparison; theory-versus-simulation checks.</p></div>
+      <div class="skill"><h3>Embedded &amp; hardware</h3><p>PIC16F877A assembly, UART and Bluetooth, H-bridge motor drive, IR reflective sensing, 16×2 LCD, level shifting, breadboard prototyping and debugging.</p></div>
+      <div class="skill"><h3>Digital design &amp; HDL</h3><p>VHDL RTL and self-checking testbenches, datapath and control partitioning, instruction-set design, transistor-level CMOS logic.</p></div>
+      <div class="skill"><h3>Communications &amp; DSP</h3><p>MATLAB, Simulink and App Designer; line coding, power spectral density, BER measurement, synchronization; FFT filtering and equalization.</p></div>
+      <div class="skill"><h3>Programming &amp; documentation</h3><p>Python (tkinter, pyserial), MATLAB, VHDL, assembly; IEEE-format technical reports and presentations.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EDUCATION ===================== -->
+<section id="education" aria-labelledby="edu-h" style="background:var(--surface-2)">
+  <div class="wrap">
+    <div class="section-head"><span class="num">04</span><h2 id="edu-h" class="title">Education</h2></div>
+    <div class="edu">
+      <h3>Notre Dame University – Louaize (NDU)</h3>
+      <p>Faculty of Engineering, ECCE Department · Undergraduate studies in Computer and Communications Engineering</p>
+      <div class="table-wrap" style="margin-bottom:0">
+        <table class="data" style="min-width:0">
+          <caption>Course work behind the featured projects</caption>
+          <thead><tr><th>Course</th><th>Featured project</th></tr></thead>
+          <tbody>
+            <tr><td>Analog IC Design (EEN&nbsp;311)</td><td><a href="#analog">45&nbsp;nm common-source amplifier</a></td></tr>
+            <tr><td>Microprocessor Laboratory (EEN&nbsp;425)</td><td><a href="#car">PIC16F877A delivery car</a></td></tr>
+            <tr><td>Digital Integrated Circuits (EEN&nbsp;422)</td><td><a href="#digital">4-bit array multiplier</a></td></tr>
+            <tr><td>Microprocessors (EEN&nbsp;424)</td><td><a href="#risc">VHDL RISC processor</a></td></tr>
+            <tr><td>Communication Systems I (EEN&nbsp;344)</td><td><a href="#comm">Bipolar pseudoternary line code</a></td></tr>
+            <tr><td>Signals and Systems</td><td><a href="#signals">Transform-based audio manipulation</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <div class="section-head"><span class="num">05</span><h2 id="contact-h" class="title">Contact</h2></div>
+    <div class="contact-card">
+      <p>Interested in discussing any of this work? You can find me on GitHub.</p>
+      <div class="btn-row"><a class="btn primary" href="https://github.com/bgnakhoul">github.com/bgnakhoul</a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Bachir G. Nakhoul · Notre Dame University – Louaize</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="assets/main.js" defer></script>
+</body>
+</html>
