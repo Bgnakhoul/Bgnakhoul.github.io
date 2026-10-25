@@ -1,4 +1,5 @@
-/* Progressive enhancements: figure lightbox, scroll reveal, nav highlighting. The page works without JS. */
+/* Progressive enhancements: figure lightbox, scroll reveal, nav highlighting, Smith-chart impedance sweep.
+   The page works without JS. */
 (function () {
   "use strict";
 
@@ -94,5 +95,70 @@
       var s = document.getElementById(id);
       if (s) io.observe(s);
     });
+  }
+
+  // ---- Smith chart: decorative impedance sweep driven by scroll ---------------
+  // The reflection coefficient spirals from a badly mismatched load (|Γ| = 0.92)
+  // to the centre of the chart (Γ = 0, Z = Z0) as you scroll down the page.
+  var smith = document.querySelector(".smith");
+  if (smith) {
+    var locus = smith.querySelector(".locus");
+    var locusBg = smith.querySelector(".locus-bg");
+    var dot = smith.querySelector(".dot");
+    var halo = smith.querySelector(".dot-halo");
+    var hud = document.querySelector(".hud");
+    var hudT = hud ? hud.querySelector(".hud-t") : null;
+    var hG = document.getElementById("h-g");
+    var hA = document.getElementById("h-a");
+    var hV = document.getElementById("h-v");
+    var hZ = document.getElementById("h-z");
+    var CX = 500, CY = 500, RAD = 425, STEPS = 260;
+    var RHO0 = 0.92, TURNS = 810; // start magnitude, total sweep in degrees
+
+    var gam = function (t) {
+      var rho = RHO0 * Math.pow(1 - t, 1.15);
+      var th = (-125 - TURNS * t) * Math.PI / 180;
+      return { rho: rho, re: rho * Math.cos(th), im: rho * Math.sin(th) };
+    };
+    var xy = function (g) { return [CX + RAD * g.re, CY - RAD * g.im]; };
+
+    var d = "";
+    for (var i = 0; i <= STEPS; i++) {
+      var p = xy(gam(i / STEPS));
+      d += (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1);
+    }
+    locusBg.setAttribute("d", d);
+    locus.setAttribute("d", d);
+    locus.setAttribute("pathLength", "1");
+
+    var ticking = false;
+    var render = function () {
+      ticking = false;
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var t = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      var g = gam(t);
+      var pt = xy(g);
+      locus.style.strokeDasharray = t.toFixed(4) + " 2";
+      locus.style.opacity = t < 0.004 ? 0 : 1;
+      dot.setAttribute("cx", pt[0].toFixed(1)); dot.setAttribute("cy", pt[1].toFixed(1));
+      halo.setAttribute("cx", pt[0].toFixed(1)); halo.setAttribute("cy", pt[1].toFixed(1));
+      if (!hud) return;
+      var den = (1 - g.re) * (1 - g.re) + g.im * g.im;
+      var zr = (1 - g.rho * g.rho) / den, zi = 2 * g.im / den;
+      var ang = Math.round(Math.atan2(g.im, g.re) * 180 / Math.PI);
+      var vswr = (1 + g.rho) / (1 - Math.min(g.rho, 0.9999));
+      hG.textContent = g.rho.toFixed(2);
+      hA.textContent = g.rho < 0.005 ? "∠ —" : "∠ " + (ang < 0 ? "−" : "") + Math.abs(ang) + "°";
+      hV.textContent = vswr >= 10 ? Math.round(vswr) : vswr.toFixed(1);
+      hZ.textContent = zr.toFixed(2) + (zi < 0 ? " − j" : " + j") + Math.abs(zi).toFixed(2);
+      var matched = t > 0.985;
+      hud.classList.toggle("ok", matched);
+      if (hudT) hudT.textContent = matched ? "matched" : "Γ sweep";
+    };
+    var onScroll = function () { if (!ticking) { ticking = true; window.requestAnimationFrame(render); } };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    window.addEventListener("load", render);
+    render();
   }
 })();

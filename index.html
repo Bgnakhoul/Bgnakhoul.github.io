@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bachir G. Nakhoul | Electronics, IC Design &amp; Embedded Systems</title>
-<meta name="description" content="Portfolio of Bachir G. Nakhoul, Computer and Communications Engineering student at Notre Dame University – Louaize: analog and digital IC design in 45 nm CMOS, PIC firmware, VHDL processor design and communication systems.">
+<title>Bachir G. Nakhoul | Electronics, IC Design &amp; Communication Systems</title>
+<meta name="description" content="Portfolio of Bachir G. Nakhoul, Computer and Communications Engineering student at Notre Dame University – Louaize: 45 nm analog and digital IC design, a VHDL RISC processor, line coding and synchronization, PIC assembly and DSP.">
 <meta name="author" content="Bachir G. Nakhoul">
-<meta property="og:title" content="Bachir G. Nakhoul | Electronics, IC Design &amp; Embedded Systems">
-<meta property="og:description" content="Selected work: 45 nm analog and digital IC design, a PIC16F877A delivery car, a VHDL RISC processor, and communication systems.">
+<meta property="og:title" content="Bachir G. Nakhoul | Electronics, IC Design &amp; Communication Systems">
+<meta property="og:description" content="Selected work: 45 nm analog and digital IC design, a VHDL RISC processor, a bipolar pseudoternary link, a PIC-assembly delivery car and an FFT audio workstation.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#080b10">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23080b10'/%3E%3Cpath d='M5 17h5l3-8 5 15 3-7h6' fill='none' stroke='%2335e0d0' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23080b10'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%2335e0d0' stroke-width='2'/%3E%3Ccircle cx='21' cy='16' r='5' fill='none' stroke='%2335e0d0' stroke-width='1.4'/%3E%3Cpath d='M6 16h20' stroke='%2335e0d0' stroke-width='1.4'/%3E%3C/svg%3E">
 <script>document.documentElement.classList.add("js");</script>
 <link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">
@@ -21,17 +21,34 @@
   "url": "https://bgnakhoul.github.io",
   "sameAs": ["https://github.com/bgnakhoul"],
   "affiliation": { "@type": "CollegeOrUniversity", "name": "Notre Dame University – Louaize" },
-  "knowsAbout": ["Analog IC design", "Digital IC design", "Embedded systems", "VHDL", "Communication systems"]
+  "knowsAbout": ["Analog IC design", "Digital IC design", "VHDL", "Communication systems", "Line coding", "Embedded systems", "Digital signal processing"]
 }
 </script>
 </head>
 <body>
 <a class="skip" href="#work">Skip to projects</a>
 
+<!-- Background: Smith chart with a decorative impedance-match sweep driven by scroll (see assets/main.js) -->
+<div class="smith" aria-hidden="true">
+  <img src="assets/smith.svg" width="1000" height="1000" alt="">
+  <svg viewBox="0 0 1000 1000" focusable="false">
+    <path class="locus-bg" d=""/>
+    <path class="locus" d=""/>
+    <circle class="dot-halo" cx="500" cy="500" r="20"/>
+    <circle class="dot" cx="500" cy="500" r="7"/>
+  </svg>
+</div>
+<div class="hud" aria-hidden="true">
+  <span class="hud-t">Γ sweep</span>
+  <span>|Γ| <b id="h-g">0.92</b> <b id="h-a">∠ −125°</b></span>
+  <span>VSWR <b id="h-v">24</b></span>
+  <span>Z/Z₀ <b id="h-z">0.05 − j0.52</b></span>
+</div>
+
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Bachir G. Nakhoul, home">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#111821" stroke="#1f2a38"/><path d="M5 17h5l3-8 5 15 3-7h6" fill="none" stroke="#35e0d0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#111821" stroke="#1f2a38"/><circle cx="16" cy="16" r="10" fill="none" stroke="#35e0d0" stroke-width="2"/><circle cx="21" cy="16" r="5" fill="none" stroke="#35e0d0" stroke-width="1.4"/><path d="M6 16h20" stroke="#35e0d0" stroke-width="1.4"/></svg>
       Bachir G. Nakhoul
     </a>
     <nav class="nav" aria-label="Sections">
@@ -52,31 +69,67 @@
     <div>
       <p class="eyebrow"><i></i>Computer &amp; Communications Engineering · NDU</p>
       <h1>Bachir G. Nakhoul</h1>
-      <p class="role">Electronics<span>/</span>IC Design<span>/</span>Embedded Systems</p>
-      <p class="tagline">I design circuits at the transistor level and build the hardware and firmware around them.</p>
+      <p class="role">Electronics<span>/</span>IC&nbsp;Design<span>/</span>Communications</p>
+      <p class="tagline">Transistor-level circuits, processors and communication links, now heading into RF and antenna engineering.</p>
       <div class="btn-row">
         <a class="btn primary" href="#work">View my work</a>
         <a class="btn ghost" href="https://github.com/bgnakhoul">GitHub</a>
       </div>
       <div class="hero-tools" aria-label="Tools">
-        <span>Cadence Virtuoso</span><span>Spectre</span><span>45 nm CMOS</span><span>VHDL</span><span>PIC assembly</span><span>MATLAB / Simulink</span>
+        <span>Cadence Virtuoso</span><span>Spectre</span><span>45 nm CMOS</span><span>VHDL</span><span>MATLAB / Simulink</span><span>PIC assembly</span>
       </div>
     </div>
 
     <div class="collage" aria-hidden="true">
-      <svg class="traces" viewBox="0 0 700 640" preserveAspectRatio="none">
-        <path class="trace" d="M10 90 H120 V190 H210 V300 H320"/>
-        <path class="trace" d="M690 560 H560 V470 H470 V380 H400"/>
-        <path class="trace" d="M60 600 H180 V520 H300"/>
-        <circle class="via" cx="10" cy="90" r="6"/><circle class="via" cx="320" cy="300" r="6"/>
-        <circle class="via" cx="690" cy="560" r="6"/><circle class="via" cx="400" cy="380" r="6"/>
-        <circle class="via" cx="60" cy="600" r="6"/><circle class="via" cx="300" cy="520" r="6"/>
+      <svg class="traces" viewBox="0 0 700 640" preserveAspectRatio="none" focusable="false">
+        <g class="board">
+          <path class="cu-t" id="t1" d="M0 80 H110 L140 110 V190 H210 L240 220 V300 H330"/>
+          <path class="cu-t" id="t2" d="M700 560 H580 L550 530 V470 H470 L440 440 V380 H390"/>
+          <path class="cu-t" id="t3" d="M40 620 H170 L200 590 V520 H300"/>
+          <path class="cu-t" id="t4" d="M690 40 H600 L570 70 V150"/>
+          <path class="pulse-t" pathLength="1000" d="M0 80 H110 L140 110 V190 H210 L240 220 V300 H330"/>
+          <path class="pulse-t p2" pathLength="1000" d="M700 560 H580 L550 530 V470 H470 L440 440 V380 H390"/>
+          <path class="pulse-t p3" pathLength="1000" d="M40 620 H170 L200 590 V520 H300"/>
+          <g class="pad"><circle cx="330" cy="300" r="9"/><circle cx="390" cy="380" r="9"/><circle cx="300" cy="520" r="9"/><circle cx="570" cy="150" r="9"/></g>
+          <g class="pad sm"><circle cx="110" cy="80" r="4"/><circle cx="210" cy="190" r="4"/><circle cx="580" cy="560" r="4"/><circle cx="470" cy="470" r="4"/><circle cx="170" cy="620" r="4"/><circle cx="600" cy="40" r="4"/></g>
+          <text class="ref" x="14" y="68">TP1</text><text class="ref" x="636" y="548">J2</text><text class="ref" x="46" y="606">C7</text><text class="ref" x="616" y="30">L3</text>
+        </g>
       </svg>
       <div class="win w2"><img src="assets/img/ana-ac-pre.webp" width="912" height="572" alt=""></div>
       <div class="win w1"><img src="assets/img/ana-layout.webp" width="403" height="551" alt=""></div>
       <div class="win w3"><img src="assets/img/dic-waveforms.webp" width="1400" height="519" alt=""></div>
     </div>
   </div>
+</div>
+
+<div class="pcb-div" aria-hidden="true">
+  <svg viewBox="0 0 1180 76" focusable="false">
+    <line class="vias" x1="12" y1="9" x2="1170" y2="9"/>
+    <line class="vias" x1="12" y1="67" x2="1170" y2="67"/>
+    <g class="cu">
+      <rect x="0" y="29" width="46" height="18" rx="2"/>
+      <rect x="44" y="34" width="156" height="8"/>
+      <rect x="196" y="14" width="8" height="28"/>
+      <rect x="200" y="34" width="52" height="8"/>
+      <rect x="252" y="34" width="60" height="8"/><rect x="282" y="23" width="60" height="8"/><rect x="312" y="34" width="60" height="8"/><rect x="342" y="23" width="60" height="8"/><rect x="372" y="34" width="60" height="8"/>
+      <rect x="432" y="34" width="68" height="8"/>
+      <rect x="500" y="30" width="14" height="16"/><rect x="522" y="30" width="14" height="16"/>
+      <rect x="536" y="34" width="44" height="8"/>
+      <polygon points="700,34 780,28 780,48 700,42"/>
+      <rect x="780" y="28" width="80" height="20"/>
+      <polygon points="860,28 900,34 900,42 860,48"/>
+      <rect x="900" y="34" width="112" height="8"/>
+      <rect x="1012" y="30" width="14" height="16"/><rect x="1044" y="30" width="14" height="16"/>
+      <rect x="1058" y="34" width="76" height="8"/>
+      <rect x="1134" y="29" width="46" height="18" rx="2"/>
+    </g>
+    <path class="cu-s" d="M580 38 H600 V16 H618 V60 H636 V16 H654 V60 H672 V38 H700"/>
+    <rect class="body" x="1026" y="31" width="18" height="14" rx="2"/>
+    <circle class="hole" cx="23" cy="38" r="4"/><circle class="hole" cx="1157" cy="38" r="4"/>
+    <circle class="hole" cx="1090" cy="38" r="3"/>
+    <path class="pulse-t" pathLength="1000" d="M46 38 H1134"/>
+    <g class="ref"><text x="62" y="26">50 Ω</text><text x="210" y="14">λ/4 stub</text><text x="312" y="62">edge-coupled BPF</text><text x="500" y="22">C1</text><text x="640" y="74">meander</text><text x="770" y="20">taper · low Z</text><text x="1026" y="24">R1</text><text x="1074" y="62">GND via</text></g>
+  </svg>
 </div>
 
 <!-- ===================== FEATURED WORK ===================== -->
@@ -86,6 +139,7 @@
       <h2 id="work-h" class="sec-title">Featured <em>work</em></h2>
       <p class="sec-sub">Click any figure to enlarge.</p>
     </div>
+    <p class="sec-note reveal">RISC waveforms are GHDL runs of the project’s own testbenches. Captions marked <i>re-plot</i> are regenerated from the report’s parameters; everything else is a screenshot from the design tools.</p>
 
     <!-- ---------- 01 ANALOG ---------- -->
     <article class="feature reveal" id="analog">
@@ -110,8 +164,8 @@
       <div class="gallery">
         <figure class="tile zoom c4r6"><img src="assets/img/ana-layout.webp" width="403" height="551" loading="lazy" alt="Layout of the common-source amplifier with multi-finger NMOS and PMOS devices, dummy devices and routed output"><figcaption><b>Layout</b> · multi-finger devices, dummies, M1–M3 routing</figcaption></figure>
         <figure class="tile zoom c4r3"><img src="assets/img/ana-schematic.webp" width="669" height="391" loading="lazy" alt="Common-source amplifier schematic with dummy devices in Cadence Virtuoso"><figcaption><b>Schematic</b> · with dummy devices</figcaption></figure>
-        <figure class="tile zoom c4r3"><img src="assets/img/ana-ac-pre.webp" width="912" height="572" loading="lazy" alt="Pre-layout AC response showing 16.64 dB gain and a bandwidth of about 6 GHz"><figcaption><b>AC response</b> · pre-layout</figcaption></figure>
-        <figure class="tile zoom c4r3"><img src="assets/img/ana-ac-post.webp" width="698" height="363" loading="lazy" alt="Post-layout AC response with the bandwidth marker near 3.9 GHz"><figcaption><b>AC response</b> · post-layout</figcaption></figure>
+        <figure class="tile zoom half c4r3"><img src="assets/img/ana-ac-pre.webp" width="912" height="572" loading="lazy" alt="Pre-layout AC response showing 16.64 dB gain and a bandwidth of about 6 GHz"><figcaption><b>AC response</b> · pre-layout</figcaption></figure>
+        <figure class="tile zoom half c4r3"><img src="assets/img/ana-ac-post.webp" width="698" height="363" loading="lazy" alt="Post-layout AC response with the bandwidth marker near 3.9 GHz"><figcaption><b>AC response</b> · post-layout</figcaption></figure>
         <figure class="tile zoom light c4r3"><img src="assets/img/ana-lvs.webp" width="669" height="526" loading="lazy" alt="PVS LVS run status: extraction clean, layout matches schematic"><figcaption><b>LVS</b> · layout matches schematic</figcaption></figure>
         <figure class="tile zoom c8r4"><img src="assets/img/ana-mc-post.webp" width="1090" height="567" loading="lazy" alt="Post-layout Monte Carlo histograms for gain, bandwidth, current and power"><figcaption><b>Monte Carlo</b> · post-layout, 200 samples</figcaption></figure>
         <div class="info c4r4">
@@ -141,7 +195,6 @@
           <span class="tag">Digital IC design</span>
           <h3>4-Bit Array Multiplier, Transistor Level</h3>
           <p>Sized 45&nbsp;nm full-adder and AND cells, assembled into the complete multiplier</p>
-          <p class="credit">Team project with Anthony El Beyrouthy</p>
         </div>
       </div>
 
@@ -156,43 +209,37 @@
       <div class="gallery">
         <figure class="tile zoom c8r4"><img src="assets/img/dic-waveforms.webp" width="1400" height="519" loading="lazy" alt="Transient waveforms of inputs A and B and product outputs P0 to P7 over 100 nanoseconds"><figcaption><b>Transient test</b> · inputs A, B and products P0–P7</figcaption></figure>
         <figure class="tile zoom light c4r4"><img src="assets/img/dic-fulladder.webp" width="467" height="291" loading="lazy" alt="Transistor-level schematic of the 28-transistor CMOS full adder"><figcaption><b>Full adder</b> · 28 transistors</figcaption></figure>
-        <figure class="tile zoom c6r4"><img src="assets/img/dic-schematic.webp" width="784" height="631" loading="lazy" alt="Cadence schematic of the complete 4-bit multiplier"><figcaption><b>Multiplier</b> · Virtuoso schematic</figcaption></figure>
-        <figure class="tile zoom light c6r4"><img src="assets/img/dic-array.webp" width="728" height="590" loading="lazy" alt="Array multiplier structure with AND gates and rows of full adders"><figcaption><b>Array structure</b> · AND gates + full adders</figcaption></figure>
+        <figure class="tile zoom half c6r4"><img src="assets/img/dic-schematic.webp" width="784" height="631" loading="lazy" alt="Cadence schematic of the complete 4-bit multiplier"><figcaption><b>Multiplier</b> · Virtuoso schematic</figcaption></figure>
+        <figure class="tile zoom half light c6r4"><img src="assets/img/dic-array.webp" width="728" height="590" loading="lazy" alt="Array multiplier structure with AND gates and rows of full adders"><figcaption><b>Array structure</b> · AND gates + full adders</figcaption></figure>
       </div>
 
       <div class="f-foot">
         <span class="chip">Cadence Virtuoso</span><span class="chip">Spectre transient</span><span class="chip">45 nm PDK</span><span class="chip">Multi-finger devices</span>
       </div>
     </article>
-  </div>
-</section>
 
-<!-- ===================== MORE WORK ===================== -->
-<section id="more" aria-labelledby="more-h">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2 id="more-h" class="sec-title">More <em>projects</em></h2>
-    </div>
-
-    <div class="work-grid">
-      <!-- CAR -->
-      <article class="work wide reveal" id="car">
-        <div class="media m3">
-          <figure class="tile zoom"><img src="assets/img/car-top.webp" width="483" height="721" loading="lazy" alt="Top view of the robot car with PIC16F877A, LCD and motor driver"><figcaption><b>Top view</b></figcaption></figure>
-          <figure class="tile zoom"><img src="assets/img/car-front.webp" width="553" height="726" loading="lazy" alt="Front view of the car with three IR line sensors"><figcaption><b>IR line sensors</b></figcaption></figure>
-          <figure class="tile zoom light"><img src="assets/img/car-blockdiagram.webp" width="933" height="1069" loading="lazy" alt="System block diagram from the PC app through Bluetooth and the PIC to motors and LCD"><figcaption><b>System block diagram</b></figcaption></figure>
+    <!-- ---------- 03 RISC ---------- -->
+    <article class="feature v3 reveal" id="risc">
+      <div class="f-head">
+        <span class="f-num" aria-hidden="true">03</span>
+        <div>
+          <span class="tag">Processor design · VHDL</span>
+          <h3>16-bit RISC Processor</h3>
+          <p>Own instruction set, register file, ALU and control unit, built in VHDL and verified in simulation</p>
         </div>
-        <div class="w-body">
-          <span class="tag">Embedded hardware</span>
-          <h3>Bluetooth Delivery Car</h3>
-          <p>Receives a room number from a PC app, follows a line, counts room markers, stops and reports back. Firmware in PIC assembly.</p>
-          <div class="chips"><span class="chip">PIC16F877A</span><span class="chip">UART 9600 baud</span><span class="chip">HC-05</span><span class="chip">L293N H-bridge</span><span class="chip">3 × IR sensors</span><span class="chip">16×2 LCD</span></div>
-        </div>
-      </article>
+      </div>
 
-      <!-- RISC -->
-      <article class="work wide reveal" id="risc">
-        <div class="diagram">
+      <div class="stats">
+        <div class="stat"><b>16-bit</b><span>Instruction word,<br>12-bit program counter</span></div>
+        <div class="stat"><b>26</b><span>Instructions in<br>4 formats (IM · EM · R · BR)</span></div>
+        <div class="stat"><b>1 cycle</b><span>Per instruction,<br>single-cycle datapath</span></div>
+        <div class="stat"><b>16 × 8</b><span>Register file,<br>2 read / 1 write</span></div>
+        <div class="stat"><b>15</b><span>ALU operations</span></div>
+        <div class="stat"><b>0x0F</b><span>Sum 1…5 in R2,<br>checked in simulation</span></div>
+      </div>
+
+      <div class="gallery">
+        <figure class="tile dia c8r6">
           <svg viewBox="0 0 700 380" role="img" aria-labelledby="risc-svg-t risc-svg-d">
             <title id="risc-svg-t">RISC processor block diagram</title>
             <desc id="risc-svg-d">The program counter addresses the program memory. The instruction feeds the control unit and the register file. The register file feeds the ALU and the data memory. ALU results and data-memory reads are written back to the register file. The control unit also loads the program counter on branches and jumps.</desc>
@@ -200,97 +247,343 @@
               <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0 L10 5 L0 10 z"/></marker>
               <marker id="ahc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead ctl" d="M0 0 L10 5 L0 10 z"/></marker>
             </defs>
-
             <rect class="blk" x="20" y="150" width="90" height="60" rx="8"/>
             <text class="lbl" x="65" y="176" text-anchor="middle">PC</text>
             <text class="sub" x="65" y="195" text-anchor="middle">12-bit</text>
-
             <rect class="blk" x="140" y="150" width="110" height="60" rx="8"/>
             <text class="lbl" x="195" y="176" text-anchor="middle">Prog. memory</text>
             <text class="sub" x="195" y="195" text-anchor="middle">16-bit instructions</text>
-
             <rect class="blk ctl" x="290" y="24" width="200" height="70" rx="8"/>
             <text class="lbl" x="390" y="54" text-anchor="middle">Control unit</text>
             <text class="sub" x="390" y="74" text-anchor="middle">decode · branch · WB select</text>
-
             <rect class="blk" x="300" y="150" width="180" height="70" rx="8"/>
             <text class="lbl" x="390" y="180" text-anchor="middle">Register file</text>
             <text class="sub" x="390" y="200" text-anchor="middle">16 × 8-bit · 2 read, 1 write</text>
-
             <rect class="blk" x="540" y="150" width="110" height="70" rx="8"/>
             <text class="lbl" x="595" y="180" text-anchor="middle">ALU</text>
             <text class="sub" x="595" y="200" text-anchor="middle">15 operations</text>
-
             <rect class="blk" x="300" y="300" width="180" height="60" rx="8"/>
             <text class="lbl" x="390" y="327" text-anchor="middle">Data memory</text>
             <text class="sub" x="390" y="346" text-anchor="middle">8-bit address, 8-bit data</text>
-
             <path class="wire" d="M110 180 H140" marker-end="url(#ah)"/>
             <path class="wire" d="M250 180 H272 V59 H290" marker-end="url(#ah)"/>
             <path class="wire" d="M272 180 H300" marker-end="url(#ah)"/>
             <text class="wlbl" x="254" y="198">instr</text>
-
             <path class="wire ctl" d="M390 94 V150" marker-end="url(#ahc)"/>
             <text class="wlbl" x="398" y="126">we · waddr</text>
-
             <path class="wire ctl" d="M490 59 H595 V150" marker-end="url(#ahc)"/>
             <text class="wlbl" x="500" y="52">alu_sel</text>
-
             <path class="wire" d="M480 185 H540" marker-end="url(#ah)"/>
             <text class="wlbl" x="486" y="176">Rx, Ry</text>
-
             <path class="wire" d="M595 220 V256 H430 V220" marker-end="url(#ah)"/>
             <path class="wire" d="M430 300 V256"/>
             <text class="wlbl" x="440" y="247">write-back</text>
-
             <path class="wire" d="M350 220 V300" marker-end="url(#ah)"/>
             <text class="wlbl" x="342" y="266" text-anchor="end">addr / data</text>
-
             <path class="wire ctl" d="M290 36 H65 V150" marker-end="url(#ahc)"/>
             <text class="wlbl" x="74" y="29">branch / jump</text>
             <text class="wlbl" x="74" y="54">PC + sext(imm8)</text>
           </svg>
+          <figcaption><b>Datapath</b> · block diagram</figcaption>
+        </figure>
+        <div class="info isa c4r6">
+          <h4>Instruction set · 26</h4>
+          <dl>
+            <dt>Arithmetic</dt><dd>ADD SUB INC DEC ADI</dd>
+            <dt>Logic</dt><dd>AND OR XOR NOT NAND NOR CLR SET</dd>
+            <dt>Shift</dt><dd>SHL SHR</dd>
+            <dt>Memory</dt><dd>LD ST (indirect) · LD STR (direct)</dd>
+            <dt>Branch</dt><dd>JMP JZ JNZ</dd>
+            <dt>Compare</dt><dd>SLT RLT</dd>
+            <dt>Other</dt><dd>MOV NOP</dd>
+          </dl>
         </div>
-        <div class="w-body">
-          <span class="tag">Processor design</span>
-          <h3>RISC Processor in VHDL</h3>
-          <p>Single-cycle load/store processor with its own instruction set, verified by block-level and self-checking top-level testbenches.</p>
-          <div class="chips"><span class="chip">16-bit instructions</span><span class="chip">8-bit datapath</span><span class="chip">26 instructions</span><span class="chip">16 × 8 register file</span><span class="chip">15-op ALU</span><span class="chip">6 testbenches</span></div>
-        </div>
-      </article>
 
-      <!-- COMMS -->
-      <article class="work reveal" id="comm">
-        <div class="media m2">
-          <figure class="tile zoom"><img src="assets/img/comm-psd.webp" width="1299" height="664" loading="lazy" alt="Simulated power spectral density of the bipolar pseudoternary signal"><figcaption><b>Simulated PSD</b></figcaption></figure>
-          <figure class="tile zoom"><img src="assets/img/comm-time.webp" width="1299" height="632" loading="lazy" alt="Simulink scope showing input bits, encoded waveform and held output"><figcaption><b>Time domain</b></figcaption></figure>
-        </div>
-        <div class="w-body">
+        <figure class="tile zoom c12r7"><img src="assets/img/risc-top.webp" width="1700" height="805" loading="lazy" alt="GHDL waveform of the full processor: clock, reset, program counter, instruction with decoded mnemonic, ALU result and registers R1 and R2 while the program sums 1 to 5; R2 reaches 0x0F"><figcaption><b>Top level</b> · GHDL simulation of the built-in program: R2 accumulates 5 + 4 + 3 + 2 + 1 = 0x0F</figcaption></figure>
+
+        <figure class="tile zoom c8r4"><img src="assets/img/risc-alu.webp" width="1700" height="550" loading="lazy" alt="ALU testbench waveform stepping through all sixteen select codes for two operand pairs, showing the result of each operation"><figcaption><b>ALU testbench</b> · every select code, two operand sets</figcaption></figure>
+        <figure class="tile zoom c4r4"><img src="assets/img/risc-regfile.webp" width="1100" height="772" loading="lazy" alt="Register file testbench: 0xFF written to R2 and read back on both read ports"><figcaption><b>Register file</b> · write R2, read on both ports</figcaption></figure>
+        <figure class="tile zoom c6r4"><img src="assets/img/risc-datamem.webp" width="1100" height="531" loading="lazy" alt="Data memory testbench writing 0xAA to address 0x0A and 0x55 to address 0xC8, then reading both back"><figcaption><b>Data memory</b> · write 0xAA / 0x55, read back</figcaption></figure>
+        <figure class="tile zoom c6r4"><img src="assets/img/risc-pc.webp" width="1100" height="521" loading="lazy" alt="Program counter testbench showing reset, counting up and loading address 0x055"><figcaption><b>Program counter</b> · reset, count, load</figcaption></figure>
+      </div>
+
+      <div class="f-foot">
+        <span class="chip">VHDL-2008</span><span class="chip">Load / store ISA</span><span class="chip">Control unit</span><span class="chip">ALU</span><span class="chip">Register file</span><span class="chip">Block-level + top-level testbenches</span>
+      </div>
+    </article>
+
+    <!-- ---------- 04 LINE CODE ---------- -->
+    <article class="feature alt v4 reveal" id="comm">
+      <div class="f-head">
+        <span class="f-num" aria-hidden="true">04</span>
+        <div>
           <span class="tag">Communication systems</span>
-          <h3>Bipolar Pseudoternary Line Code</h3>
-          <p>Simulated spectrum matches theory; zero bit errors, plus a synchronization-failure test.</p>
-          <div class="chips"><span class="chip">PSD null at 1 kHz</span><span class="chip">BER 0</span><span class="chip">MATLAB / Simulink</span></div>
-          <p class="credit" style="color:var(--muted);font-size:.85rem">With Habib Bou Maroun</p>
+          <h3>Bipolar Pseudoternary Link</h3>
+          <p>Encoder, PSD, threshold receiver and a synchronization study in MATLAB / Simulink</p>
         </div>
-      </article>
+      </div>
 
-      <!-- AUDIO -->
-      <article class="work reveal" id="signals">
-        <div class="media m2">
-          <figure class="tile zoom light"><img src="assets/img/sig-app.webp" width="829" height="661" loading="lazy" alt="MATLAB audio app with waveform view, playback controls and a three-band equalizer"><figcaption><b>MATLAB app</b></figcaption></figure>
-          <figure class="tile zoom"><img src="assets/img/sig-spectrogram.webp" width="739" height="447" loading="lazy" alt="Spectrogram of a music track"><figcaption><b>Spectrogram</b></figcaption></figure>
+      <div class="stats">
+        <div class="stat"><b>S(0) = 0</b><span>No DC component:<br>transformer-safe</span></div>
+        <div class="stat"><b>1 kHz</b><span>First null at R<sub>b</sub><br>(T<sub>b</sub> = 1 ms)</span></div>
+        <div class="stat"><b>1 bit/s/Hz</b><span>Bandwidth efficiency</span></div>
+        <div class="stat"><b>75 %</b><span>Transition density,<br>equiprobable bits</span></div>
+        <div class="stat"><b>BER 0.5</b><span>Fixed clock, ½ T<sub>b</sub> delay<br>500 of 1000 bits wrong</span></div>
+        <div class="stat"><b>BER 0</b><span>Forwarded clock,<br>same delay</span></div>
+      </div>
+
+      <div class="gallery">
+        <figure class="tile zoom c8r5"><img src="assets/img/lc-time.webp" width="1500" height="764" loading="lazy" alt="Ten data bits, the three-level encoded waveform with the receiver sample points and 0.5 volt thresholds, and the decoded bits"><figcaption><b>Encode → sample → decode</b> · 20 samples per bit <i>(re-plot)</i></figcaption></figure>
+        <div class="info codeinfo c4r5">
+          <h4>Encoder · MATLAB function block</h4>
+<pre class="codebox"><span class="k">function</span> y = pseudoternary_encoder(u)
+<span class="k">persistent</span> polarity
+<span class="k">if</span> isempty(polarity)
+  polarity = <span class="n">1</span>;
+<span class="k">end</span>
+<span class="k">if</span> u == <span class="n">1</span>
+  y = <span class="n">0</span>;
+<span class="k">else</span>
+  y = polarity;
+  polarity = -polarity;
+<span class="k">end</span></pre>
+          <p>Receiver: downsample ×20 at offset 9, then <code>|x| &lt; 0.5 → 1</code>, else <code>0</code>.</p>
         </div>
-        <div class="w-body">
-          <span class="tag">Signals &amp; DSP</span>
-          <h3>Transform-Based Audio App</h3>
-          <p>Separates drums, vocals and cymbals, equalizes in three bands, and adds speed, reverse and echo effects.</p>
-          <div class="chips"><span class="chip">FFT filtering</span><span class="chip">Z-transform echo</span><span class="chip">MATLAB App Designer</span></div>
-          <p class="credit" style="color:var(--muted);font-size:.85rem">With Sami N. Khalil and Youssef K. Chalhoub</p>
+
+        <figure class="tile zoom c8r4"><img src="assets/img/lc-psd.webp" width="1500" height="655" loading="lazy" alt="Simulated power spectral density of the pseudoternary signal overlaid on the theoretical curve, with a null at zero frequency and at plus and minus 1 kilohertz"><figcaption><b>Power spectral density</b> · simulation vs theory <i>(re-plot)</i></figcaption></figure>
+        <div class="info c4r4">
+          <h4>Theory vs simulation</h4>
+          <table>
+            <thead><tr><th>Property</th><th>Theory</th><th>Sim</th></tr></thead>
+            <tbody>
+              <tr><td>DC at f = 0</td><td class="dim">0</td><td class="ok">≈ 0</td></tr>
+              <tr><td>First null</td><td class="dim">1 kHz</td><td class="ok">≈ 1 kHz</td></tr>
+              <tr><td>Main lobe</td><td class="dim">2 kHz</td><td class="ok">≈ 2 kHz</td></tr>
+              <tr><td>η</td><td class="dim">1.0</td><td class="ok">≈ 1.0</td></tr>
+            </tbody>
+          </table>
         </div>
-      </article>
-    </div>
+
+        <figure class="tile zoom c8r4"><img src="assets/img/lc-ber.webp" width="1500" height="627" loading="lazy" alt="Bit error rate against channel delay: zero for a fixed receiver clock until half a bit of delay, then about 0.5; zero throughout with a forwarded clock"><figcaption><b>Synchronization</b> · BER vs timing offset <i>(re-plot, matches the Simulink runs)</i></figcaption></figure>
+        <div class="info c4r4">
+          <h4>Simulink BER runs · 1000 bits</h4>
+          <table>
+            <thead><tr><th>Case</th><th>Errors</th><th>BER</th></tr></thead>
+            <tbody>
+              <tr><td>Fixed clock, ¼ T<sub>b</sub></td><td class="dim">0</td><td class="ok">0</td></tr>
+              <tr><td>Fixed clock, ½ T<sub>b</sub></td><td class="dim">500</td><td class="near">0.5</td></tr>
+              <tr><td>Forwarded clock, ½ T<sub>b</sub></td><td class="dim">0</td><td class="ok">0</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure class="tile zoom light c6r5"><img src="assets/img/comm-receiver.webp" width="1045" height="801" loading="lazy" alt="Simulink model: Bernoulli source, encoder, zero-order hold, downsample and decoder, with delay blocks and a pulse-generator clock feeding a sample-and-hold receiver"><figcaption><b>Simulink model</b> · transmitter, receivers, shared clock</figcaption></figure>
+        <figure class="tile zoom c6r5"><img src="assets/img/comm-psd.webp" width="1299" height="664" loading="lazy" alt="Simulink Spectrum Analyzer showing the two-lobed power spectral density of the signal"><figcaption><b>Spectrum Analyzer</b> · Simulink</figcaption></figure>
+      </div>
+
+      <div class="f-foot">
+        <span class="chip">MATLAB / Simulink</span><span class="chip">Line coding</span><span class="chip">PSD</span><span class="chip">Detection</span><span class="chip">Clock recovery</span><span class="chip">BER</span>
+      </div>
+    </article>
   </div>
 </section>
+
+<div class="pcb-div" aria-hidden="true">
+  <svg viewBox="0 0 1180 76" focusable="false">
+    <line class="vias" x1="12" y1="9" x2="1170" y2="9"/>
+    <line class="vias" x1="12" y1="67" x2="1170" y2="67"/>
+    <g class="cu">
+      <rect x="0" y="29" width="46" height="18" rx="2"/>
+      <rect x="44" y="34" width="156" height="8"/>
+      <rect x="196" y="14" width="8" height="28"/>
+      <rect x="200" y="34" width="52" height="8"/>
+      <rect x="252" y="34" width="60" height="8"/><rect x="282" y="23" width="60" height="8"/><rect x="312" y="34" width="60" height="8"/><rect x="342" y="23" width="60" height="8"/><rect x="372" y="34" width="60" height="8"/>
+      <rect x="432" y="34" width="68" height="8"/>
+      <rect x="500" y="30" width="14" height="16"/><rect x="522" y="30" width="14" height="16"/>
+      <rect x="536" y="34" width="44" height="8"/>
+      <polygon points="700,34 780,28 780,48 700,42"/>
+      <rect x="780" y="28" width="80" height="20"/>
+      <polygon points="860,28 900,34 900,42 860,48"/>
+      <rect x="900" y="34" width="112" height="8"/>
+      <rect x="1012" y="30" width="14" height="16"/><rect x="1044" y="30" width="14" height="16"/>
+      <rect x="1058" y="34" width="76" height="8"/>
+      <rect x="1134" y="29" width="46" height="18" rx="2"/>
+    </g>
+    <path class="cu-s" d="M580 38 H600 V16 H618 V60 H636 V16 H654 V60 H672 V38 H700"/>
+    <rect class="body" x="1026" y="31" width="18" height="14" rx="2"/>
+    <circle class="hole" cx="23" cy="38" r="4"/><circle class="hole" cx="1157" cy="38" r="4"/>
+    <circle class="hole" cx="1090" cy="38" r="3"/>
+    <path class="pulse-t" pathLength="1000" d="M46 38 H1134"/>
+    <g class="ref"><text x="62" y="26">50 Ω</text><text x="210" y="14">λ/4 stub</text><text x="312" y="62">edge-coupled BPF</text><text x="500" y="22">C1</text><text x="640" y="74">meander</text><text x="770" y="20">taper · low Z</text><text x="1026" y="24">R1</text><text x="1074" y="62">GND via</text></g>
+  </svg>
+</div>
+
+<!-- ===================== MORE WORK ===================== -->
+<section id="more" aria-labelledby="more-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 id="more-h" class="sec-title">More <em>projects</em></h2>
+      <p class="sec-sub">Embedded hardware and signal processing.</p>
+    </div>
+
+    <!-- ---------- 05 CAR ---------- -->
+    <article class="feature compact reveal" id="car">
+      <div class="f-head">
+        <span class="f-num" aria-hidden="true">05</span>
+        <div>
+          <span class="tag">Embedded systems · PIC assembly</span>
+          <h3>Bluetooth Delivery Car</h3>
+          <p>Autonomous line follower commanded wirelessly from a PC. Every line of firmware is PIC16F877A assembly, Bluetooth UART included</p>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>273 lines</b><span>PIC assembly.<br>No C, no libraries</span></div>
+        <div class="stat"><b>9600 baud</b><span>8N1 UART over an<br>HC-05 Bluetooth module</span></div>
+        <div class="stat"><b>RX + TX</b><span>Polled RCIF / TXIF,<br>overrun (OERR) recovery</span></div>
+        <div class="stat"><b>3 → 8</b><span>IR bits index a<br>computed-jump table</span></div>
+        <div class="stat"><b>Rooms 1–9</b><span>Selected in a Python<br>PC app, status sent back</span></div>
+        <div class="stat"><b>HD44780</b><span>LCD driver, 8-bit mode,<br>hand-timed delays</span></div>
+      </div>
+
+      <div class="gallery">
+        <figure class="tile zoom half c3r6"><img src="assets/img/car-top.webp" width="483" height="721" loading="lazy" alt="Top view of the robot car with the PIC16F877A board, LCD and motor driver"><figcaption><b>Top view</b></figcaption></figure>
+        <figure class="tile zoom half c3r6"><img src="assets/img/car-front.webp" width="553" height="726" loading="lazy" alt="Front view of the car with three IR line sensors"><figcaption><b>IR line sensors</b></figcaption></figure>
+        <figure class="tile zoom light c3r6"><img src="assets/img/car-blockdiagram.webp" width="933" height="1069" loading="lazy" alt="System block diagram from the PC app through Bluetooth and the PIC to the motors and LCD"><figcaption><b>System</b> · PC → Bluetooth → PIC</figcaption></figure>
+        <div class="info c3r6">
+          <h4>IR sensors → motion</h4>
+          <table>
+            <thead><tr><th>RB2‥0</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td class="mono">010</td><td>Straight</td></tr>
+              <tr><td class="mono">001 · 011</td><td>Steer right</td></tr>
+              <tr><td class="mono">100 · 110</td><td>Steer left</td></tr>
+              <tr><td class="mono">101</td><td>Room marker</td></tr>
+              <tr><td class="mono">000 · 111</td><td>Keep reading</td></tr>
+            </tbody>
+          </table>
+          <p class="note">A marker decrements the room counter; at zero the car stops and the LCD shows “arrived”.</p>
+        </div>
+
+        <div class="info codeinfo c6r5">
+          <h4>Bluetooth UART · bring-up and receive</h4>
+<pre class="codebox"><span class="c">; 9600 baud, 8N1, continuous receive</span>
+<span class="k">MOVLW</span> B<span class="s">'00100100'</span>    <span class="c">; TXEN, BRGH = 1</span>
+<span class="k">MOVWF</span> TXSTA
+<span class="k">MOVLW</span> D<span class="s">'25'</span>          <span class="c">; SPBRG</span>
+<span class="k">MOVWF</span> SPBRG
+<span class="k">MOVLW</span> B<span class="s">'10010000'</span>    <span class="c">; SPEN, CREN</span>
+<span class="k">MOVWF</span> RCSTA
+
+LOOP1
+  <span class="k">BTFSC</span> RCSTA,OERR     <span class="c">; overrun?</span>
+  <span class="k">GOTO</span>  FIX_OERR       <span class="c">; pulse CREN</span>
+WAIT_RX
+  <span class="k">BTFSS</span> PIR1,RCIF      <span class="c">; byte received?</span>
+  <span class="k">GOTO</span>  WAIT_RX
+  <span class="k">MOVF</span>   RCREG,W       <span class="c">; target room</span></pre>
+        </div>
+        <div class="info codeinfo c6r5">
+          <h4>Line following · computed jump</h4>
+<pre class="codebox">READ_IR
+  <span class="k">BTFSS</span> PIR1,TXIF      <span class="c">; TXREG free?</span>
+  <span class="k">GOTO</span>  $-1
+  <span class="k">MOVF</span>   ROOM,W
+  <span class="k">MOVWF</span>  TXREG         <span class="c">; status byte to the PC</span>
+  <span class="k">MOVF</span>   PORTB,W       <span class="c">; 3 IR sensors</span>
+  <span class="k">ANDLW</span>  H<span class="s">'07'</span>
+  <span class="k">ADDWF</span>  PCL,F         <span class="c">; computed jump</span>
+  <span class="k">GOTO</span>   READ_IR       <span class="c">; 000</span>
+  <span class="k">GOTO</span>   RIGHT         <span class="c">; 001</span>
+  <span class="k">GOTO</span>   STRAIGHT      <span class="c">; 010</span>
+  <span class="k">GOTO</span>   RIGHT         <span class="c">; 011</span>
+  <span class="k">GOTO</span>   LEFT          <span class="c">; 100</span>
+  <span class="k">GOTO</span>   DECREMENT     <span class="c">; 101 room marker</span>
+  <span class="k">GOTO</span>   LEFT          <span class="c">; 110</span>
+  <span class="k">GOTO</span>   READ_IR       <span class="c">; 111</span></pre>
+        </div>
+      </div>
+
+      <div class="f-foot">
+        <span class="chip">PIC16F877A</span><span class="chip">PIC assembly</span><span class="chip">UART</span><span class="chip">HC-05</span><span class="chip">L293N H-bridge</span><span class="chip">3 × IR sensors</span><span class="chip">16×2 LCD</span><span class="chip">Python PC app</span>
+      </div>
+    </article>
+
+    <!-- ---------- 06 AUDIO ---------- -->
+    <article class="feature compact alt reveal" id="signals">
+      <div class="f-head">
+        <span class="f-num" aria-hidden="true">06</span>
+        <div>
+          <span class="tag">Signals &amp; systems · MATLAB</span>
+          <h3>Transform-Based Audio Workstation</h3>
+          <p>A MATLAB App Designer app built around the FFT: a three-band equalizer, component separation, and time-domain effects</p>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>3-band EQ</b><span>Bass · Mid · Treble,<br>applied in the FFT domain</span></div>
+        <div class="stat"><b>3 stems</b><span>Drums · vocals · cymbals<br>split with FFT masks</span></div>
+        <div class="stat"><b>z<sup>−3969</sup></b><span>Echo: δ[n − 3969] =<br>90 ms at 44.1 kHz, gain 0.6</span></div>
+        <div class="stat"><b>9 s</b><span>Panning sweep:<br>right → centre → left</span></div>
+        <div class="stat"><b>100 ms</b><span>Temporal masking,<br>one gap every 0.5 s</span></div>
+        <div class="stat"><b>FFT view</b><span>Live time / frequency<br>display, speed, reverse</span></div>
+      </div>
+
+      <div class="gallery">
+        <figure class="tile zoom light c4r5"><img src="assets/img/sig-app.webp" width="829" height="661" loading="lazy" alt="MATLAB audio app with a waveform view, playback controls, effect buttons and three equalizer sliders"><figcaption><b>The app</b> · MATLAB App Designer</figcaption></figure>
+        <figure class="tile zoom c8r5"><img src="assets/img/audio-eq.webp" width="1500" height="764" loading="lazy" alt="Spectrum before and after the equalizer with bass raised six times and treble reduced to 0.2, with the step-shaped gain below"><figcaption><b>Equalizer</b> · same algorithm as the app, on the sample track <i>(re-plot)</i></figcaption></figure>
+        <figure class="tile zoom c8r4"><img src="assets/img/audio-bands.webp" width="1500" height="627" loading="lazy" alt="Spectrum of the mixed track with the drum, vocal and cymbal frequency bands marked"><figcaption><b>Separation</b> · drums 0–280 Hz, vocals 500–1800 Hz, cymbals &gt; 6.9 kHz <i>(re-plot)</i></figcaption></figure>
+        <div class="info codeinfo c4r4">
+          <h4>EQ band and echo · condensed</h4>
+<pre class="codebox"><span class="c">% gain on 0–300 Hz, both FFT halves</span>
+X = <span class="k">fft</span>(x);  i = <span class="k">round</span>(<span class="n">300</span>/df);
+X(<span class="n">1</span>:i+<span class="n">1</span>)      = X(<span class="n">1</span>:i+<span class="n">1</span>)*g;
+X(n-i-<span class="n">1</span>:n)  = X(n-i-<span class="n">1</span>:n)*g;
+y = <span class="k">real</span>(<span class="k">ifft</span>(X));
+y = y/<span class="k">max</span>(<span class="k">abs</span>(y));
+
+<span class="c">% echo: h[n] = delta[n - 3969]</span>
+h = [<span class="k">zeros</span>(<span class="n">1</span>,<span class="n">0.09</span>*fs) <span class="n">1</span>];
+y = x + <span class="n">0.6</span>*<span class="k">conv</span>(x,h,<span class="s">'same'</span>);</pre>
+        </div>
+      </div>
+
+      <div class="f-foot">
+        <span class="chip">MATLAB</span><span class="chip">App Designer</span><span class="chip">FFT / IFFT</span><span class="chip">Spectral masking</span><span class="chip">Z-transform</span><span class="chip">Convolution</span><span class="chip">Stereo panning</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<div class="pcb-div" aria-hidden="true">
+  <svg viewBox="0 0 1180 76" focusable="false">
+    <line class="vias" x1="12" y1="9" x2="1170" y2="9"/>
+    <line class="vias" x1="12" y1="67" x2="1170" y2="67"/>
+    <g class="cu">
+      <rect x="0" y="29" width="46" height="18" rx="2"/>
+      <rect x="44" y="34" width="156" height="8"/>
+      <rect x="196" y="14" width="8" height="28"/>
+      <rect x="200" y="34" width="52" height="8"/>
+      <rect x="252" y="34" width="60" height="8"/><rect x="282" y="23" width="60" height="8"/><rect x="312" y="34" width="60" height="8"/><rect x="342" y="23" width="60" height="8"/><rect x="372" y="34" width="60" height="8"/>
+      <rect x="432" y="34" width="68" height="8"/>
+      <rect x="500" y="30" width="14" height="16"/><rect x="522" y="30" width="14" height="16"/>
+      <rect x="536" y="34" width="44" height="8"/>
+      <polygon points="700,34 780,28 780,48 700,42"/>
+      <rect x="780" y="28" width="80" height="20"/>
+      <polygon points="860,28 900,34 900,42 860,48"/>
+      <rect x="900" y="34" width="112" height="8"/>
+      <rect x="1012" y="30" width="14" height="16"/><rect x="1044" y="30" width="14" height="16"/>
+      <rect x="1058" y="34" width="76" height="8"/>
+      <rect x="1134" y="29" width="46" height="18" rx="2"/>
+    </g>
+    <path class="cu-s" d="M580 38 H600 V16 H618 V60 H636 V16 H654 V60 H672 V38 H700"/>
+    <rect class="body" x="1026" y="31" width="18" height="14" rx="2"/>
+    <circle class="hole" cx="23" cy="38" r="4"/><circle class="hole" cx="1157" cy="38" r="4"/>
+    <circle class="hole" cx="1090" cy="38" r="3"/>
+    <path class="pulse-t" pathLength="1000" d="M46 38 H1134"/>
+    <g class="ref"><text x="62" y="26">50 Ω</text><text x="210" y="14">λ/4 stub</text><text x="312" y="62">edge-coupled BPF</text><text x="500" y="22">C1</text><text x="640" y="74">meander</text><text x="770" y="20">taper · low Z</text><text x="1026" y="24">R1</text><text x="1074" y="62">GND via</text></g>
+  </svg>
+</div>
 
 <!-- ===================== ABOUT ===================== -->
 <section id="about" aria-labelledby="about-h">
@@ -301,13 +594,18 @@
     <div class="about-grid reveal">
       <div class="panel">
         <h3>Profile</h3>
-        <p>Computer and Communications Engineering student at Notre Dame University – Louaize. I enjoy the full path from a transistor-level schematic to a verified layout, and from a register map to a robot that actually drives.</p>
+        <p>Computer and Communications Engineering student at Notre Dame University – Louaize. My work runs from transistor-level circuits in 45 nm CMOS to a VHDL processor, a line-coded communication link and firmware written directly in assembly.</p>
+      </div>
+      <div class="panel next">
+        <h3>Next</h3>
+        <p>RF and antenna engineering, with a master’s degree in the field as the next step. RF and antenna projects will be added to this page.</p>
+        <svg class="mini-smith" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><clipPath id="ms"><circle cx="60" cy="60" r="54"/></clipPath><circle cx="60" cy="60" r="54"/><line x1="6" y1="60" x2="114" y2="60"/><circle cx="87" cy="60" r="27"/><circle cx="73.5" cy="60" r="40.5"/><circle cx="114" cy="6" r="54" clip-path="url(#ms)"/><circle cx="114" cy="114" r="54" clip-path="url(#ms)"/><circle cx="60" cy="60" r="3.2" class="dot"/></svg>
       </div>
       <div class="panel">
         <h3>Skills</h3>
-        <div class="skill-group"><small>IC design</small><div class="chips"><span class="chip">Virtuoso</span><span class="chip">Spectre</span><span class="chip">Monte Carlo</span><span class="chip">DRC / LVS</span><span class="chip">PEX</span></div></div>
-        <div class="skill-group"><small>Embedded &amp; HDL</small><div class="chips"><span class="chip">PIC assembly</span><span class="chip">UART</span><span class="chip">VHDL</span></div></div>
-        <div class="skill-group"><small>Systems &amp; DSP</small><div class="chips"><span class="chip">MATLAB</span><span class="chip">Simulink</span><span class="chip">Python</span></div></div>
+        <div class="skill-group"><small>IC design</small><div class="chips"><span class="chip">Virtuoso</span><span class="chip">Spectre</span><span class="chip">Monte Carlo</span><span class="chip">DRC / LVS</span><span class="chip">PEX</span><span class="chip">EMIR</span></div></div>
+        <div class="skill-group"><small>Digital &amp; embedded</small><div class="chips"><span class="chip">VHDL</span><span class="chip">PIC assembly</span><span class="chip">UART</span></div></div>
+        <div class="skill-group"><small>Communications &amp; DSP</small><div class="chips"><span class="chip">MATLAB</span><span class="chip">Simulink</span><span class="chip">Line coding</span><span class="chip">PSD / BER analysis</span><span class="chip">FFT</span><span class="chip">Python</span></div></div>
       </div>
       <div class="panel edu">
         <h3>Education</h3>
@@ -323,9 +621,26 @@
 <section id="contact" aria-labelledby="contact-h">
   <div class="wrap">
     <div class="contact reveal">
-      <h2 id="contact-h">Let’s connect</h2>
-      <p>Interested in this work? Find me on GitHub.</p>
-      <div class="btn-row"><a class="btn primary" href="https://github.com/bgnakhoul">github.com/bgnakhoul</a></div>
+      <div class="c-text">
+        <h2 id="contact-h">Let’s connect</h2>
+        <p>Interested in this work, or in RF and antenna engineering? Find me on GitHub.</p>
+        <div class="btn-row"><a class="btn primary" href="https://github.com/bgnakhoul">github.com/bgnakhoul</a></div>
+      </div>
+      <figure class="patch" aria-hidden="true">
+        <svg viewBox="0 0 420 300" focusable="false">
+          <circle class="ring" cx="230" cy="150" r="90"/>
+          <circle class="ring r2" cx="230" cy="150" r="90"/>
+          <circle class="ring r3" cx="230" cy="150" r="90"/>
+          <rect class="sub-s" x="40" y="40" width="340" height="220" rx="10"/>
+          <path class="cu-p" d="M140 90 H320 V210 H140 V162 H176 V138 H140 Z"/>
+          <rect class="cu-p" x="40" y="146" width="136" height="8"/>
+          <rect class="cu-p" x="6" y="138" width="38" height="24" rx="2"/>
+          <circle class="hole" cx="22" cy="150" r="4"/>
+          <text class="ref" x="50" y="134">50 Ω feed</text>
+          <text class="ref" x="150" y="228">inset-fed patch</text>
+        </svg>
+        <figcaption>Illustration: inset-fed microstrip patch</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -335,6 +650,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 Bachir G. Nakhoul</span>
+    <span class="foot-note">Background: Smith chart (Z<sub>0</sub> normalised). The impedance sweep is decorative.</span>
     <a href="#top">Back to top ↑</a>
   </div>
 </footer>
